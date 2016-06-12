@@ -1,0 +1,25 @@
+{
+  "name": "cleo",
+  "version": "0.0.0",
+  "description": "Command line utilities for Node.js 4+",
+  "keywords": [
+    "cleo",
+    "cli",
+    "command",
+    "typed",
+    "line",
+    "utilities",
+    "utils"
+  ],
+  "homepage": "https://github.com/futagoza/cleo",
+  "repository": "futagoza/cleo",
+  "bugs": "https://github.com/futagoza/cleo/issues",
+  "license": "MIT",
+  "author": "Futago-za Ryuu <futagoza.ryuu@gmail.com> (http://futagoza.github.io/)",
+
+  "main": "lib/cleo.js",
+  "bin": "bin/cleo",
+  "engines": {
+    "node": ">= 4.0.0"
+  }
+}
