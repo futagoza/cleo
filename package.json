@@ -21,12 +21,14 @@
   "bin": "bin/cleo",
   "scripts": {
     "lint": "node_modules/.bin/eslint --cache .",
-    "test": "npm run lint"
+    "spec": "node_modules/.bin/mocha",
+    "test": "npm run lint && npm run spec"
   },
   "engines": {
     "node": ">= 4.0.0"
   },
   "devDependencies": {
+    "mocha": "2.5.3",
     "eslint": "2.12.0"
   },
 
