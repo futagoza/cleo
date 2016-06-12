@@ -27,6 +27,9 @@
   "engines": {
     "node": ">= 4.0.0"
   },
+  "dependencies": {
+    "fs-extra": "0.30.0"
+  },
   "devDependencies": {
     "mocha": "2.5.3",
     "eslint": "2.12.0"
