@@ -1,4 +1,5 @@
-[![build status](https://img.shields.io/travis/futagoza/cleo.svg)](https://travis-ci.org/futagoza/cleo)
+[![travis build status](https://img.shields.io/travis/futagoza/cleo.svg)](https://travis-ci.org/futagoza/cleo)
+[![appveyor build status](https://img.shields.io/appveyor/ci/futagoza/cleo.svg)](https://ci.appveyor.com/project/futagoza/cleo)
 [![release](https://img.shields.io/npm/v/cleo.svg)](https://www.npmjs.com/package/cleo)
 [![dependencies](https://img.shields.io/david/futagoza/cleo.svg)](https://david-dm.org/futagoza/cleo)
 [![devDependencies](https://img.shields.io/david/dev/futagoza/cleo.svg)](https://david-dm.org/futagoza/cleo#info=devDependencies)
