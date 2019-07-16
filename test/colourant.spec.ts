@@ -6,22 +6,24 @@ test( "basic usage", t => {
     const styled = colourant( [ 1, 22 ], [ 90, 39 ] );
     const simple = colourant.simple( 90, 39 );
 
-    t.is( typeof styled( "multi styled text" ), "string" );
-    t.is( typeof simple( "single styled text" ), "string" );
+    t.snapshot( styled( "multi styled text" ) );
+    t.snapshot( simple( "single styled text" ) );
 
 } );
 
 test( "enable/disable return the main function", t => {
 
-    t.is( typeof colourant.disable().simple, "function" );
-    t.is( typeof colourant.enable().simple, "function" );
+    const keys = Object.keys( colourant );
+
+    t.deepEqual( Object.keys( colourant.disable() ), keys );
+    t.deepEqual( Object.keys( colourant.enable() ), keys );
 
 } );
 
-test( "default colours work", t => {
+test( "builtin styles work", t => {
 
-    t.is( typeof colourant.error( "All hands on deck! An error has occured!" ), "string" );
-    t.is( typeof colourant.info( "Ah, so that's what it's doing." ), "string" );
-    t.is( typeof colourant.warning( "Looks like I should probally do something about this!" ), "string" );
+    t.snapshot( colourant.error( "red" ) );
+    t.snapshot( colourant.info( "grey" ) );
+    t.snapshot( colourant.warning( "yellow" ) );
 
 } );
