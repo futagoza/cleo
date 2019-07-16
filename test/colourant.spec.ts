@@ -8,8 +8,18 @@ test( "basic usage", t => {
 
     t.is( typeof styled( "multi styled text" ), "string" );
     t.is( typeof simple( "single styled text" ), "string" );
-    t.is( typeof colourant.disable(), "function" );
-    t.is( typeof colourant.enable(), "function" );
+
+} );
+
+test( "enable/disable return the main function", t => {
+
+    t.is( typeof colourant.disable().simple, "function" );
+    t.is( typeof colourant.enable().simple, "function" );
+
+} );
+
+test( "default colours work", t => {
+
     t.is( typeof colourant.error( "All hands on deck! An error has occured!" ), "string" );
     t.is( typeof colourant.info( "Ah, so that's what it's doing." ), "string" );
     t.is( typeof colourant.warning( "Looks like I should probally do something about this!" ), "string" );
