@@ -27,7 +27,8 @@
     },
     "scripts": {
         "build": "tsc -p src",
-        "test": "mocha",
+        "test": "nyc ava",
+        "coverage": "nyc report --reporter=json > codecov",
         "lint": "eslint ."
     },
     "devDependencies": {
@@ -35,8 +36,11 @@
         "@futagoza/eslint-config-dev": "8.2.0",
         "@futagoza/eslint-config-typescript": "8.2.0",
         "@futagoza/tsconfig": "1.0.0",
+        "ava": "2.2.0",
+        "codecov": "3.5.0",
         "eslint": "6.0.1",
-        "mocha": "6.1.4",
+        "nyc": "14.1.1",
+        "ts-node": "8.3.0",
         "typescript": "3.5.3"
     },
     "engines": {
