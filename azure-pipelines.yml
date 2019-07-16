@@ -1,0 +1,23 @@
+name: $(BuildID)
+
+resources:
+  repositories:
+    - repository: apt
+      type: github
+      name: futagoza/apt
+      endpoint: futagoza
+
+variables:
+- group: 'env-variables'
+
+jobs:
+
+- template: eslint.yml@apt
+
+- template: node-test.yml@apt
+  parameters:
+    afterEach:
+    - script: yarn coverage
+      displayName: 'Publish code coverage results (codecov.io)'
+      env:
+        CODECOV_TOKEN: $(CODECOV_TOKEN)
