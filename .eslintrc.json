@@ -1,0 +1,11 @@
+{
+    "extends": [
+        "@futagoza/dev",
+        "@futagoza/typescript"
+    ],
+    "rules": {
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/no-parameter-properties": 0
+    },
+    "root": true
+}

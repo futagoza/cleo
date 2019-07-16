@@ -1,46 +1,45 @@
 {
-  "name": "cleo",
-  "version": "0.0.0",
-  "description": "Command line utilities for Node.js 4+",
-  "keywords": [
-    "cleo",
-    "cli",
-    "command",
-    "typed",
-    "line",
-    "utilities",
-    "utils"
-  ],
-  "homepage": "https://github.com/futagoza/cleo",
-  "repository": "futagoza/cleo",
-  "bugs": "https://github.com/futagoza/cleo/issues",
-  "license": "MIT",
-  "author": "Futago-za Ryuu <futagoza.ryuu@gmail.com> (http://futagoza.github.io/)",
-
-  "main": "lib/cleo.js",
-  "bin": "bin/cleo",
-  "scripts": {
-    "lint": "node_modules/.bin/eslint --cache .",
-    "spec": "node_modules/.bin/mocha",
-    "test": "npm run lint && npm run spec"
-  },
-  "engines": {
-    "node": ">= 4.0.0"
-  },
-  "dependencies": {
-    "fs-extra": "0.30.0"
-  },
-  "devDependencies": {
-    "mocha": "2.5.3",
-    "eslint": "2.12.0"
-  },
-
-  "eslintConfig": {
-    "extends": "eslint:recommended",
-    "root": true,
-    "env": {
-      "node": true,
-      "es6": true
+    "name": "cleo",
+    "version": "0.0.0",
+    "description": "Command line utilities for Node.js",
+    "keywords": [
+        "argv",
+        "cli",
+        "color",
+        "config",
+        "log",
+        "option",
+        "repl",
+        "taskrunner"
+    ],
+    "repository": "futagoza/cleo",
+    "license": "MIT",
+    "author": "Futago-za Ryuu <futagoza.ryuu@gmail.com>",
+    "files": [
+        "out",
+        "src"
+    ],
+    "main": "out/cleo.js",
+    "dependencies": {
+        "cosmiconfig": "5.2.1",
+        "dateformat": "3.0.3",
+        "tslib": "1.10.0"
+    },
+    "scripts": {
+        "build": "tsc -p src",
+        "test": "mocha",
+        "lint": "eslint ."
+    },
+    "devDependencies": {
+        "@types/dateformat": "3.0.0",
+        "@futagoza/eslint-config-dev": "8.2.0",
+        "@futagoza/eslint-config-typescript": "8.2.0",
+        "@futagoza/tsconfig": "1.0.0",
+        "eslint": "6.0.1",
+        "mocha": "6.1.4",
+        "typescript": "3.5.3"
+    },
+    "engines": {
+        "node": ">= 8"
     }
-  }
 }
