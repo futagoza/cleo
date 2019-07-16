@@ -24,5 +24,5 @@ yarn add cleo
 
 ## license
 
-Copyright (c) 2016+ [Futago-za Ryuu](http://github.com/futagoza)<br>
+Copyright (c) 2019 [Futago-za Ryuu](http://github.com/futagoza)<br>
 The MIT License, [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
