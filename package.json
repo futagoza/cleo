@@ -28,7 +28,7 @@
     "scripts": {
         "build": "tsc -p src",
         "test": "nyc ava",
-        "coverage": "nyc report --reporter=json > codecov",
+        "coverage": "codecov -f coverage/*.json",
         "lint": "eslint ."
     },
     "devDependencies": {
