@@ -33,9 +33,7 @@ export function BuildTransformData( [ start, end ]: CodeGroup ): TransformData {
         open,
         close,
 
-        escape( input: Input ) {
-
-            if ( typeof input === "number" ) return `${ input }`;
+        escape( input: string ) {
 
             if ( input.includes( close ) ) return input.replace( rgx, close + open );
 
@@ -60,6 +58,8 @@ export function BuildTransformer( { open, close, escape }: TransformData ): Tran
         if ( ! styler.enabled ) return `${ input }`;
 
         // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+        if ( typeof input === "number" ) return open + input + close;
+
         return open + escape( input ) + close;
 
     };

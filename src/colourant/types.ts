@@ -40,7 +40,7 @@ export type TransformData = {
     open: string;
     close: string;
 
-    escape: Transformer;
+    escape: ( input: string ) => string;
 
 };
 
