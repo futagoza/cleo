@@ -9,7 +9,7 @@ import {
     CodeGroup,
     ColourantAPI,
 
-} from "./.internal/types";
+} from "./types";
 
 export default ( () => {
 

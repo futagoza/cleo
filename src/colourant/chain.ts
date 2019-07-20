@@ -1,6 +1,6 @@
 import styler from "./styler";
-import { BuildChainableTransformer } from "./.internal/helpers";
-import { CodeGroupMap, TransformerMap } from "./.internal/types";
+import { BuildChainableTransformer } from "./util";
+import { CodeGroupMap, TransformerMap } from "./types";
 
 /**
  * Build a chainable transformer for the given transformers.

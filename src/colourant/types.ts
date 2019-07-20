@@ -1,5 +1,5 @@
-import codes from "../codes";
-import styler from "../styler";
+import codes from "./codes";
+import styler from "./styler";
 
 /**
  * Represent's 2 numbers describing the start and end of a style.

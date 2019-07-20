@@ -1,4 +1,4 @@
-import styler from "../styler";
+import styler from "./styler";
 import {
 
     ChainableTransformer,

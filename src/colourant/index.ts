@@ -12,6 +12,6 @@ export {
 
 };
 
-export * from "./.internal/types";
+export * from "./types";
 
 export default colourant;

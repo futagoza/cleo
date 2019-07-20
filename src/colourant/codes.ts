@@ -1,4 +1,4 @@
-import { CodeGroupMap } from "./.internal/types";
+import { CodeGroupMap } from "./types";
 
 /**
  * Text modifiers

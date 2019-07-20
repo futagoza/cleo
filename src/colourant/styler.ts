@@ -1,5 +1,5 @@
-import { BuildTransformData, BuildTransformer } from "./.internal/helpers";
-import { CodeGroup, Transformer } from "./.internal/types";
+import { BuildTransformData, BuildTransformer } from "./util";
+import { CodeGroup, Transformer } from "./types";
 
 /**
  * Create a string transformer from multiple code groups.
