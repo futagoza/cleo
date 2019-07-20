@@ -16,11 +16,13 @@ import {
 
 test( "basic usage", t => {
 
-    const styled = colourant( [ 1, 22 ], [ 90, 39 ] );
-    const simple = colourant.from( 90, 39 );
+    const multiStyled = colourant( [ 1, 22 ], [ 36, 39 ] );
+    const singleStyleFromNumbers = styler.from( 90, 39 );
+    const singleStyleFromArray = styler.from( [ 32, 39 ] );
 
-    t.snapshot( styled( "multi styled text" ) );
-    t.snapshot( simple( "single styled text" ) );
+    t.snapshot( multiStyled( "multi styled text" ) );
+    t.snapshot( singleStyleFromNumbers( "single styled text" ) );
+    t.snapshot( singleStyleFromArray( "single styled text" ) );
 
 } );
 
