@@ -42,7 +42,7 @@ export type TransformData = {
  * Represent's a function that can either transform a string, or returns chainable transformers.
  */
 
-export type ChainTransformer = {
+export type ChainTransformer<T> = {
 
     /**
      * Transform a string.
@@ -51,10 +51,10 @@ export type ChainTransformer = {
     ( input: string ): string;
 
     /**
-     * Return chainable transformers.
+     * Chainable string transformers.
      */
 
-    (): ChainTransformer;
+    (): ChainableTransformer<T>;
 
 };
 
@@ -64,7 +64,7 @@ export type ChainTransformer = {
 
 export type ChainTransformerMap<T> = {
 
-    [ K in keyof T ]: ChainTransformer;
+    [ K in keyof T ]: ChainTransformer<T>;
 
 };
 
@@ -72,7 +72,7 @@ export type ChainTransformerMap<T> = {
  * Represent's a chainable transformer that also doubles as a map of chainable transformers.
  */
 
-export type ChainableTransformer<T> = ChainTransformer & ChainTransformerMap<T>;
+export type ChainableTransformer<T> = ChainTransformer<T> & ChainTransformerMap<T>;
 
 /**
  * `cleo.colourant` API
