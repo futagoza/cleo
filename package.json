@@ -28,6 +28,7 @@
     "scripts": {
         "build": "tsc -p src",
         "test": "nyc ava",
+        "test:update-snapshots": "ava -u",
         "coverage": "codecov -f coverage/*.json",
         "lint": "eslint ."
     },
