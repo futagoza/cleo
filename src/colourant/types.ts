@@ -75,10 +75,18 @@ export type ChainTransformerMap<T> = {
 export type ChainableTransformer<T> = ChainTransformer<T> & ChainTransformerMap<T>;
 
 /**
+ * Default style codes used by cleo.colourant
+ * 
+ * Plucked from https://github.com/lukeed/kleur/blob/master/test/codes.js
+ */
+
+export type DefaultCodes = typeof codes;
+
+/**
  * `cleo.colourant` API
  */
 
-export interface ColourantAPI extends ChainTransformerMap<typeof codes> {
+export interface ColourantAPI extends ChainTransformerMap<DefaultCodes> {
 
     /**
      * Create a string transformer from multiple code groups.
