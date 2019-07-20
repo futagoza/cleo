@@ -10,6 +10,12 @@ import {
 } from "./types";
 
 /**
+ * Builds the ANSI string for the given code.
+ */
+
+export const ANSI = ( x: number ) => `\x1b[${ x }m`;
+
+/**
  * Build the strings and escape method required to transform input.
  * 
  * Based on code from https://github.com/lukeed/kleur
@@ -17,8 +23,8 @@ import {
 
 export function BuildTransformData( [ start, end ]: CodeGroup ): TransformData {
 
-    const open = `\x1b[${ start }m`;
-    const close = `\x1b[${ end }m`;
+    const open = ANSI( start );
+    const close = ANSI( end );
     const rgx = new RegExp( `\\x1b\\[${ end }m`, "g" );
 
     return {
