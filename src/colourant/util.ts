@@ -3,6 +3,7 @@ import {
 
     ChainableTransformer,
     CodeGroup,
+    Input,
     TransformData,
     Transformer,
     TransformerMap,
@@ -32,7 +33,9 @@ export function BuildTransformData( [ start, end ]: CodeGroup ): TransformData {
         open,
         close,
 
-        escape( input: string ) {
+        escape( input: Input ) {
+
+            if ( typeof input === "number" ) return `${ input }`;
 
             if ( input.includes( close ) ) return input.replace( rgx, close + open );
 
@@ -52,9 +55,9 @@ export function BuildTransformData( [ start, end ]: CodeGroup ): TransformData {
 
 export function BuildTransformer( { open, close, escape }: TransformData ): Transformer {
 
-    return ( input: string ) => {
+    return ( input: Input ) => {
 
-        if ( ! styler.enabled ) return input;
+        if ( ! styler.enabled ) return `${ input }`;
 
         // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         return open + escape( input ) + close;
@@ -69,9 +72,12 @@ export function BuildTransformer( { open, close, escape }: TransformData ): Tran
 
 export function BuildChainableTransformer<T>( transformers: TransformerMap<T>, cache: Transformer[] ) {
 
-    function $( input?: string ) {
+    function $( input?: Input ) {
 
         if ( input == null ) return $;
+
+        // The tranformers will convert a number to a string, but what if there is no tranformer?
+        if ( cache.length === 0 ) return `${ input }`;
 
         for ( const transform of cache ) input = transform( input );
 
@@ -83,7 +89,7 @@ export function BuildChainableTransformer<T>( transformers: TransformerMap<T>, c
 
         const transform: Transformer = transformers[ name ];
 
-        $[ name ] = ( input?: string ) => {
+        $[ name ] = ( input?: Input ) => {
 
             if ( input == null ) return BuildChainableTransformer<T>( transformers, [ ...cache, transform ] );
 

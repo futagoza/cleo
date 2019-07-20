@@ -1,5 +1,5 @@
 import { BuildTransformData, BuildTransformer } from "./util";
-import { CodeGroup, Transformer } from "./types";
+import { CodeGroup, Input, Transformer } from "./types";
 
 /**
  * Create a string transformer from multiple code groups.
@@ -28,7 +28,9 @@ export default function styler( ...codegroups: CodeGroup[] ): Transformer {
         open,
         close,
 
-        escape( input: string ) {
+        escape( input: Input ) {
+
+            if ( typeof input === "number" ) return `${ input }`;
 
             for ( const escape of escapers ) input = escape( input );
 

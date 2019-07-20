@@ -14,10 +14,16 @@ export type CodeGroup = [ number, number ];
 export type CodeGroupMap<T> = { [ K in keyof T ]: CodeGroup; };
 
 /**
+ * Input to be transformed.
+ */
+
+export type Input = string | number;
+
+/**
  * Represent's a string transformer.
  */
 
-export type Transformer = ( input: string ) => string;
+export type Transformer = ( input: Input ) => string;
 
 /**
  * Represent's a map of string transformers.
@@ -48,7 +54,7 @@ export type ChainTransformer<T> = {
      * Transform a string.
      */
 
-    ( input: string ): string;
+    ( input: Input ): string;
 
     /**
      * Chainable string transformers.
