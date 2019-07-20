@@ -2,6 +2,7 @@ import colourant from "./api";
 import chain from "./chain";
 import * as codes from "./codes";
 import styler from "./styler";
+import * as util from "./util";
 
 export {
 
@@ -9,6 +10,7 @@ export {
     codes,
     colourant,
     styler,
+    util,
 
 };
 
