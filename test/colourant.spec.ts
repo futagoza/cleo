@@ -4,6 +4,7 @@ import test from "ava";
 
 import {
 
+    chain,
     codes,
     colourant,
     styler,
@@ -67,6 +68,16 @@ test( "chains", t => {
     t.snapshot( colourant.red().bold( value ) );
     t.snapshot( colourant.bold().yellow().bgRed().italic( value ) );
     t.snapshot( colourant.green().bold().underline( value ) );
+
+    const chain = colourant.blue().bold();
+
+    t.deepEqual( chain(), chain, "~> return the chain on no argument" );
+
+} );
+
+test( "empty chains", t => {
+
+    t.is( chain( {} )( "foo" ), "foo", "~> return input" );
 
 } );
 

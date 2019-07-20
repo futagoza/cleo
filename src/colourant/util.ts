@@ -72,6 +72,7 @@ export function BuildTransformer( { open, close, escape }: TransformData ): Tran
 
 export function BuildChainableTransformer<T>( transformers: TransformerMap<T>, cache: Transformer[] ) {
 
+    /* istanbul ignore next */
     function $( input?: Input ) {
 
         if ( input == null ) return $;
