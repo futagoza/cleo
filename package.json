@@ -21,6 +21,7 @@
     ],
     "main": "out/cleo.js",
     "dependencies": {
+        "colourant": "1.0.0",
         "cosmiconfig": "5.2.1",
         "dateformat": "3.0.3",
         "tslib": "1.10.0"
@@ -28,9 +29,7 @@
     "scripts": {
         "rebuild": "rimraf out && tsc -p src",
         "test": "nyc ava",
-        "test:update-snapshots": "ava -u",
-        "benchmark:perf": "node bench/colour",
-        "benchmark:load": "node bench/colour/load",
+        "test-and-update-snapshots": "ava -u",
         "coverage": "codecov -f coverage/*.json",
         "lint": "eslint ."
     },
@@ -39,14 +38,9 @@
         "@futagoza/eslint-config-dev": "8.2.0",
         "@futagoza/eslint-config-typescript": "8.2.0",
         "@futagoza/tsconfig": "1.0.0",
-        "ansi": "0.3.1",
-        "ansi-colors": "4.1.1",
         "ava": "2.2.0",
-        "benchmark": "2.1.4",
-        "chalk": "2.4.2",
         "codecov": "3.5.0",
         "eslint": "6.0.1",
-        "kleur": "3.0.3",
         "nyc": "14.1.1",
         "rimraf": "2.6.3",
         "ts-node": "8.3.0",
