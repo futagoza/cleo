@@ -19,7 +19,7 @@
         "out",
         "src"
     ],
-    "main": "out/cleo.js",
+    "main": "out/index.js",
     "dependencies": {
         "colourant": "1.0.0",
         "cosmiconfig": "5.2.1",
