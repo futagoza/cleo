@@ -153,7 +153,7 @@ export function proxy<T>( target: T, format: ( argKey: string ) => string = came
      *
      * cleo.visitArgv( {
      *
-     *     "---": last( cleo.Rest ),
+     *     "---": last( cleo.convertors.Rest ),
      *
      * } )
      *
