@@ -32,7 +32,9 @@
         "test": "nyc ava",
         "test-and-update-snapshots": "ava -u",
         "coverage": "codecov -f coverage/*.json",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "preversion": "npm test && npm run rebuild",
+        "postversion": "git push --follow-tags && npm publish"
     },
     "devDependencies": {
         "@types/dateformat": "3.0.0",
