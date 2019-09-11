@@ -1,0 +1,35 @@
+on: push
+
+jobs:
+  Test:
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macOS-latest ]
+        node: [ 8.x, 10.x, 12.x ]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: Install Yarn
+      run: |
+        curl -o- -L https://yarnpkg.com/install.sh | bash
+        export PATH=$HOME/.yarn/bin:$PATH
+
+    - name: Install dependencies
+      run: yarn --ignore-engines
+
+    - name: Run tests
+      run: yarn test
+
+    - name: Publish code coverage results
+      run: yarn coverage
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
