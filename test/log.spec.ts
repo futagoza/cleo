@@ -91,7 +91,7 @@ test( "log.appendTime", t => {
     t.is(
 
         FauxWriter.lastWrite(),
-        `[${ colourant.grey( dateformat( date, "HH:MM:ss" ) ) }] `
+        `[${ colourant.grey( dateformat( date, "HH:MM:ss" ) ) }] `,
 
     );
 
