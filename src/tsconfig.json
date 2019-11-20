@@ -4,6 +4,7 @@
         "**/*.ts"
     ],
     "compilerOptions": {
+        "importHelpers": false,
         "outDir": "../out",
         "rootDir": ".",
     }
