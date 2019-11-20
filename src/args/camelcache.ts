@@ -33,7 +33,7 @@ camelcache.set = ( argKey: string ) => {
 };
 
 /**
- * If this method is provided a string of 0 length, it will delete the cached value.
+ * If this method is given an argument, it will delete the cached value assoiciated with it.
  * 
  * If this method is provided no arguments, it will empty the cache.
  */
@@ -47,10 +47,6 @@ camelcache.clear = ( argKey?: string ) => {
 
     }
 
-    if ( typeof argKey === "string" && argKey.length !== 0 ) {
-
-        delete KEY_CACHE[ argKey ];
-
-    }
+    if ( KEY_CACHE?.[ argKey ] ) delete KEY_CACHE[ argKey ];
 
 };
