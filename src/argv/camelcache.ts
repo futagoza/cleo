@@ -5,7 +5,7 @@ let KEY_CACHE: { [ argKey: string ]: string } = {};
 /**
  * A wrapper around [camelcase](https://github.com/sindresorhus/camelcase#readme) that will:
  * 
- * 1. Return converted value from cache if present
+ * 1. Return converted argument key from cache if present
  * 2. Strip `--no-` if found at the start
  * 3. Convert using `camelcase` and cache result
  * 4. Return from cache
@@ -13,24 +13,17 @@ let KEY_CACHE: { [ argKey: string ]: string } = {};
 
 export function camelcache( argKey: string ) {
 
-    if ( ! KEY_CACHE[ argKey ] ) camelcache.set( argKey );
+    if ( ! KEY_CACHE[ argKey ] ) {
+
+        const keyName = argKey.startsWith( "--no-" ) ? argKey.slice( 5 ) : argKey;
+
+        KEY_CACHE[ argKey ] = camelcase( keyName, { pascalCase: false } );
+
+    }
 
     return KEY_CACHE[ argKey ];
 
 }
-
-/**
- * 1. Strip `--no-` if found at the start
- * 2. Convert using [camelcase](https://github.com/sindresorhus/camelcase#readme) and cache result
- */
-
-camelcache.set = ( argKey: string ) => {
-
-    if ( argKey.startsWith( "--no-" ) ) argKey = argKey.slice( 5 );
-
-    KEY_CACHE[ argKey ] = camelcase( argKey, { pascalCase: false } );
-
-};
 
 /**
  * If this method is given an argument, it will delete the cached value assoiciated with it.
@@ -47,6 +40,6 @@ camelcache.clear = ( argKey?: string ) => {
 
     }
 
-    if ( KEY_CACHE?.[ argKey ] ) delete KEY_CACHE[ argKey ];
+    if ( KEY_CACHE[ argKey ] ) delete KEY_CACHE[ argKey ];
 
 };
