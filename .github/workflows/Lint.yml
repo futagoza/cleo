@@ -13,11 +13,8 @@ jobs:
       with:
         node-version: 10.x
 
-    - name: Install Yarn
-      run: npm install --global yarn
-
     - name: Install dependencies
-      run: yarn --ignore-engines
+      run: npx yarn@1.19.1 --ignore-engines
 
     - name: Lint JavaScript files using ESLint
-      run: yarn lint
+      run: npm run lint

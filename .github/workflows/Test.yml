@@ -19,16 +19,13 @@ jobs:
       with:
         node-version: ${{ matrix.node }}
 
-    - name: Install Yarn
-      run: npm install --global yarn
-
     - name: Install dependencies
-      run: yarn --ignore-engines
+      run: npx yarn@1.19.1 --ignore-engines
 
     - name: Run tests
-      run: yarn test
+      run: npm run test
 
     - name: Publish code coverage results
-      run: yarn coverage
+      run: npm run coverage
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
