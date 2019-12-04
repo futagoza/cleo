@@ -1,4 +1,4 @@
-[![GitHub Actions](https://shields-staging-pr-3913.herokuapp.com/github/actions/futagoza/cleo/master?label=build)](https://github.com/futagoza/cleo)
+[![CI](https://github.com/futagoza/cleo/workflows/ci/badge.svg)](https://github.com/futagoza/cleo/actions?workflow=ci)
 [![codecov](https://codecov.io/gh/futagoza/cleo/branch/master/graph/badge.svg)](https://codecov.io/gh/futagoza/cleo)
 [![release](https://img.shields.io/npm/v/cleo.svg)](https://www.npmjs.com/package/cleo)
 [![dependencies](https://img.shields.io/david/futagoza/cleo.svg)](https://david-dm.org/futagoza/cleo)
