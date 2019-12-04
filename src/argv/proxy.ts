@@ -308,7 +308,7 @@ export function proxy<T>( target: T, format: ( argKey: string ) => string = came
 
                 if ( typeof transform === "function" ) return transform;
 
-                const separator = transform || ",";
+                const separator = transform ?? ",";
 
                 return ( argument: Argument ) => {
 

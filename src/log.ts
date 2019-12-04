@@ -41,7 +41,7 @@ export const appendTime = ( ( time: Date | string = new Date(), color: string = 
 
     }
 
-    __write( `[${ colourant[ color ]( dateformat( time, "HH:MM:ss" ) ) }] ` );
+    __write( `[${ colourant[ color ]( dateformat( time, "HH:MM:ss" ) ) as string }] ` );
 
 } ) as {
 
